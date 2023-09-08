@@ -180,7 +180,7 @@ declare module '@xurenda/x-data-spreadsheet' {
      * @param lang
      * @param message
      */
-    static locale(lang: string, message: undefined): void
+    static locale(lang: string): void
   }
   global {
     interface Window {
