@@ -1,13 +1,12 @@
 {
-  "name": "x-data-spreadsheet",
-  "version": "1.1.8",
+  "name": "@xurenda/x-data-spreadsheet",
+  "version": "1.1.8-4",
   "description": "a javascript xpreadsheet",
-  "types": "src/index.d.ts",
-  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "main": "dist/main.js",
   "files": [
-    "assets",
     "dist",
-    "src"
+    "types"
   ],
   "author": "myliang <liangyuliang0335@gmail.com>",
   "license": "MIT",
@@ -26,13 +25,14 @@
     ]
   },
   "scripts": {
-    "dev": "webpack-dev-server --open --config build/webpack.dev.js",
-    "build": "webpack --config build/webpack.prod.js",
-    "build-locale": "webpack --config build/webpack.locale.js",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --open --config build/webpack.dev.js",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --config build/webpack.prod.js",
+    "build-locale": "NODE_OPTIONS=--openssl-legacy-provider webpack --config build/webpack.locale.js",
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "test": "nyc ./node_modules/mocha/bin/mocha --require @babel/register --recursive test",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 31ecdb12-8ecb-46f7-a486-65c2516307dd",
-    "postinstall": "opencollective-postinstall"
+    "postinstall": "opencollective-postinstall",
+    "prepublishOnly": "pnpm run build && pnpm run build-locale"
   },
   "keywords": [
     "javascript",
@@ -71,5 +71,8 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/x-spreadsheet"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

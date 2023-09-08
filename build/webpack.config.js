@@ -4,8 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolve = dir => path.join(__dirname, '..', dir);
 
 module.exports = {
-  entry: {
-    xspreadsheet: './src/index.js',
+  entry: './src/index.js',
+  output: {
+    library: 'xspreadsheet',
+    libraryTarget: 'umd',
+    filename: 'xspreadsheet.js',
   },
   module: {
     rules: [
