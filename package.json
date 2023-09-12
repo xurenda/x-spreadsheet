@@ -1,6 +1,6 @@
 {
   "name": "@xurenda/x-data-spreadsheet",
-  "version": "1.1.8-5",
+  "version": "1.1.8-7",
   "description": "a javascript xpreadsheet",
   "types": "types/index.d.ts",
   "main": "dist/main.js",

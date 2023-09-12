@@ -263,7 +263,6 @@ function verticalScrollbarSet() {
   const { data, verticalScrollbar } = this;
   const { height } = this.getTableOffset();
   const erth = data.exceptRowTotalHeight(0, -1);
-  // console.log('erth:', erth);
   verticalScrollbar.set(height, data.rows.totalHeight() - erth);
 }
 

@@ -106,7 +106,7 @@ function genBtn(it) {
 export default class Toolbar {
   constructor(data, widthFn, isHide = false) {
     this.data = data;
-    this.change = () => {};
+    this.change = () => { };
     this.widthFn = widthFn;
     this.isHide = isHide;
     const style = data.defaultStyle();
